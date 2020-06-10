@@ -17,7 +17,7 @@ import com.chinasoft.service.impl.UserMapperServiceImpl;
 @Controller
 @RequestMapping("/user")
 public class UserMapperController {
-
+	
 	@Autowired
 	UserMapperServiceImpl service;
 	
@@ -73,4 +73,6 @@ public class UserMapperController {
 		rs.put("error_code",0);
         return rs;
 	}
+	
+	
 }
