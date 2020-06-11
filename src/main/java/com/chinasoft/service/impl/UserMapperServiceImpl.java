@@ -16,13 +16,15 @@ public class UserMapperServiceImpl implements UserMapperService {
 	UserMapper mapper;
 
 	@Override
-	public void insert(User user) {
-		mapper.insertUser(user);
+	public int insert(User user) {
+		int result=mapper.insertUser(user);
+		return result;
 	}
 	
 	@Override
-	public void delete(int user_id) {
-		mapper.deleteUser(user_id);
+	public int delete(List<String> user_id) {
+		int result=mapper.deleteUser(user_id);
+		return result;
 	}
 	
 	@Override
@@ -32,14 +34,39 @@ public class UserMapperServiceImpl implements UserMapperService {
 	}
 	
 	@Override
-	public void update(User user){
-		mapper.updateUser(user);
+	public int update(User user){
+		int result=mapper.updateUser(user);
+		return result;
 	}
 
 	@Override
 	public int getGroupId(int user_id) {
 		int groupId = mapper.getGroupId(user_id);
 		return groupId;
+	}
+	
+	@Override
+	public User selectByName(String username) {
+		User user = mapper.selectByName(username);
+		return user;
+	}
+	
+	@Override
+	public User selectByid(int user_id) {
+		User user = mapper.selectByid(user_id);
+		return user;
+	}
+	
+	@Override
+	public int getPosition_id(String positionName) {
+		int position_id = mapper.getPosition_id(positionName);
+		return position_id;
+	}
+
+	@Override
+	public int getDepartment_id(String departmentName) {
+		int department_id = mapper.getDepartment_id(departmentName);
+		return department_id;
 	}
 
 }

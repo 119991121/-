@@ -10,16 +10,21 @@ public class User  implements Serializable{
 	private String username;
 	private String password;
 	private String name;
-	private String groupId;
+	private int groupId;
 	private Date createdDate;
 	private String phone;
 	private String sex;
 	private String email;
-	private String position;
+	private int position_id;
+	private String positionName;
+	private String positionMessage;
 	private String education;
 	private String idCardNo;
-	private String department;
+	private int department_id;
+	private String departmentName;
+	private String departmentMessage;
 	private String address;
+	private int face_id;
 	public int getUser_id() {
 		return user_id;
 	}
@@ -44,15 +49,16 @@ public class User  implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getGroupId() {
+	public int getGroupId() {
 		return groupId;
 	}
-	public void setGroupId(String groupId) {
+	public void setGroupId(int groupId) {
 		this.groupId = groupId;
 	}
 	public Date getCreatedDate() {
 		return createdDate;
 	}
+	@JsonFormat(pattern="yy:MM:dd",timezone="GMT+8")
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
@@ -74,11 +80,23 @@ public class User  implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPosition() {
-		return position;
+	public int getPosition_id() {
+		return position_id;
 	}
-	public void setPosition(String position) {
-		this.position = position;
+	public void setPosition_id(int position_id) {
+		this.position_id = position_id;
+	}
+	public String getPositionName() {
+		return positionName;
+	}
+	public void setPositionName(String positionName) {
+		this.positionName = positionName;
+	}
+	public String getPositionMessage() {
+		return positionMessage;
+	}
+	public void setPositionMessage(String positionMessage) {
+		this.positionMessage = positionMessage;
 	}
 	public String getEducation() {
 		return education;
@@ -92,11 +110,23 @@ public class User  implements Serializable{
 	public void setIdCardNo(String idCardNo) {
 		this.idCardNo = idCardNo;
 	}
-	public String getDepartment() {
-		return department;
+	public int getDepartment_id() {
+		return department_id;
 	}
-	public void setDepartment(String department) {
-		this.department = department;
+	public void setDepartment_id(int department_id) {
+		this.department_id = department_id;
+	}
+	public String getDepartmentName() {
+		return departmentName;
+	}
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
+	}
+	public String getDepartmentMessage() {
+		return departmentMessage;
+	}
+	public void setDepartmentMessage(String departmentMessage) {
+		this.departmentMessage = departmentMessage;
 	}
 	public String getAddress() {
 		return address;
@@ -104,13 +134,20 @@ public class User  implements Serializable{
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	public int getFace_id() {
+		return face_id;
+	}
+	public void setFace_id(int face_id) {
+		this.face_id = face_id;
+	}
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public User(int user_id, String username, String password, String name, String groupId, Date createdDate,
-			String phone, String sex, String email, String position, String education, String idCardNo,
-			String department, String address) {
+	public User(int user_id, String username, String password, String name, int groupId, Date createdDate, String phone,
+			String sex, String email, int position_id, String positionName, String positionMessage, String education,
+			String idCardNo, int department_id, String departmentName, String departmentMessage, String address,
+			int face_id) {
 		super();
 		this.user_id = user_id;
 		this.username = username;
@@ -121,18 +158,27 @@ public class User  implements Serializable{
 		this.phone = phone;
 		this.sex = sex;
 		this.email = email;
-		this.position = position;
+		this.position_id = position_id;
+		this.positionName = positionName;
+		this.positionMessage = positionMessage;
 		this.education = education;
 		this.idCardNo = idCardNo;
-		this.department = department;
+		this.department_id = department_id;
+		this.departmentName = departmentName;
+		this.departmentMessage = departmentMessage;
 		this.address = address;
+		this.face_id = face_id;
 	}
 	@Override
 	public String toString() {
 		return "User [user_id=" + user_id + ", username=" + username + ", password=" + password + ", name=" + name
 				+ ", groupId=" + groupId + ", createdDate=" + createdDate + ", phone=" + phone + ", sex=" + sex
-				+ ", email=" + email + ", position=" + position + ", education=" + education + ", idCardNo=" + idCardNo
-				+ ", department=" + department + ", address=" + address + "]";
+				+ ", email=" + email + ", position_id=" + position_id + ", positionName=" + positionName
+				+ ", positionMessage=" + positionMessage + ", education=" + education + ", idCardNo=" + idCardNo
+				+ ", department_id=" + department_id + ", departmentName=" + departmentName + ", departmentMessage="
+				+ departmentMessage + ", address=" + address + ", face_id=" + face_id + "]";
 	}
+
+	
 	
 }
